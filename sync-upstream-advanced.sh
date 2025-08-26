@@ -21,7 +21,7 @@ FORCE_SYNC=false
 SKIP_REBASE=false
 DRY_RUN=false
 UPDATE_SUBMODULES=true
-FEATURE_BRANCH=""
+FEATURE_BRANCH="feature-1"
 
 # Парсинг аргументов
 while [[ $# -gt 0 ]]; do
