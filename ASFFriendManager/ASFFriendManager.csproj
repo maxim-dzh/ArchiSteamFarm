@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<!-- <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally> -->
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Composition.AttributedModel" IncludeAssets="compile"/>
+		<PackageReference Include="AngleSharp" IncludeAssets="compile"/>
+		<PackageReference Include="SteamKit2" IncludeAssets="compile"/>
+        <PackageReference Include="Newtonsoft.Json" IncludeAssets="compile"/>
+	</ItemGroup>
+
+	<ItemGroup>
+        <PackageVersion Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageVersion Include="AngleSharp" Version="1.1.2"/>
+    </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ArchiSteamFarm\ArchiSteamFarm.csproj" ExcludeAssets="all" Private="false" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<ItemGroup>
+			<CommonFiles Include="bin\$(Configuration)\$(TargetFramework)\*.*" />
+			<CommonFilesPublish Include="bin\$(Configuration)\$(TargetFramework)\publish\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(CommonFiles)" DestinationFolder="..\ArchiSteamFarm\bin\$(Configuration)\$(TargetFramework)\plugins\ASFFriendManager\" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="@(CommonFilesPublish)" DestinationFolder="..\ArchiSteamFarm\bin\$(Configuration)\$(TargetFramework)\plugins\ASFFriendManager\publish" SkipUnchangedFiles="false" />
+	</Target>
+
+</Project>
