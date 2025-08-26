@@ -8,7 +8,7 @@ SOLUTION="${MAIN_PROJECT}.sln"
 CONFIGURATION="Release"
 OUT="out"
 OUT_ASF="${OUT}/result"
-PLUGINS="${MAIN_PROJECT}.OfficialPlugins.ItemsMatcher ${MAIN_PROJECT}.OfficialPlugins.MobileAuthenticator"
+PLUGINS="${MAIN_PROJECT}.OfficialPlugins.ItemsMatcher ${MAIN_PROJECT}.OfficialPlugins.MobileAuthenticator ASFEnhance/ASFEnhance ASFFriendManager"
 
 ANALYSIS=1
 ASF_UI=1
