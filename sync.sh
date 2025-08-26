@@ -11,7 +11,7 @@ git commit -m "submodule update"
 git push origin main
 
 # 2. Ребейзим свою feature ветку
-git checkout feature/my-plugin
+git checkout feature
 git rebase main
 
 # Если есть конфликты:
